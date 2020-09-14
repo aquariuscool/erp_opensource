@@ -28,7 +28,7 @@ class AppAsset extends AssetBundle
         // 'public/javascripts/jquery/jquery.cookie.js',
         'js/jquery/jquery.mousewheel.min.js',
         'js/lib/select2/select2.full.js',
-        'js/public.js?v=1507878023',
+        'js/public.js?v=1507878025',
     ];
     public $depends = [
         'yii\web\YiiAsset',

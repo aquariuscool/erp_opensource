@@ -11,7 +11,7 @@ use eagle\widgets\Alert;
 
 AppAsset::register($this);
 
-use yii\jui\JuiAsset;
+use eagle\assets\JuiAsset;
 use eagle\modules\util\helpers\TranslateHelper;
 use eagle\modules\util\helpers\MenuHelper;
 use eagle\modules\app\apihelpers\AppApiHelper;

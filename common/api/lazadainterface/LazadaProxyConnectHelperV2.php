@@ -33,11 +33,11 @@ class LazadaProxyConnectHelperV2
 	
 	// TODO proxy host
 	// lazada的   非商品 时读取
-	public static $LAZADA_PROXY_URL = "http://localhost/Lazada_Proxy_Server/ApiEntryV3.php";
-	public static $LAZADA_PROXY2_URL = "http://localhost/Lazada_Proxy_Server/ApiEntryV3.php";// sg ，lazada目前各个站点大部分都在新加坡了
+	public static $LAZADA_PROXY_URL = "http://lb.proxy:222/Lazada_Proxy_Server/ApiEntryV3.php";
+	public static $LAZADA_PROXY2_URL = "http://lb.proxy:222/Lazada_Proxy_Server/ApiEntryV3.php";// sg ，lazada目前各个站点大部分都在新加坡了
 	
 	// lazada的   商品 时读取
-	public static $LAZADA_PRODUCT_PROXY_URL = "http://localhost/Lazada_Proxy_Server/ApiEntryV3.php";
+	public static $LAZADA_PRODUCT_PROXY_URL = "http://lb.proxy:222/Lazada_Proxy_Server/ApiEntryV3.php";
 	
 	
     // $TIME_OUT  s 单位

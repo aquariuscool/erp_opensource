@@ -1655,7 +1655,7 @@ class OrderController extends \eagle\components\Controller{
 				}
 			}
 		}else{
-			break 1;
+            return false;
 		}
 	}
 	

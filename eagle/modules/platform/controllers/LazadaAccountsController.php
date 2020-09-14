@@ -408,20 +408,20 @@ class LazadaAccountsController extends \eagle\components\Controller
      */
     public function actionAuth1 (){
         try{
-//             $user_info = \Yii::$app->user->identity;
-//             if ($user_info['puid']==0){
-//                 $uid = $user_info['uid'];
-//             }else {
-//                 $uid = $user_info['puid'];
-//             }
+             $user_info = \Yii::$app->user->identity;
+             if ($user_info['puid']==0){
+                 $uid = $user_info['uid'];
+             }else {
+                 $uid = $user_info['puid'];
+             }
             
-//             //app自定义参数，会原样返回，从而知道对应的账号
-//             $state='littleboss_'.$uid;
-//             $redirect_uri = \Yii::$app->request->hostInfo.\Yii::$app->urlManager->getBaseUrl().'/'.'platform/lazada-accounts/auth2';
-//             $ApiAuth = new LazadaInterface_Helper_V2();
-//             $url = $ApiAuth->getAuthUrl($state,$redirect_uri);
+             //app自定义参数，会原样返回，从而知道对应的账号
+             $state='littleboss_'.$uid;
+             $redirect_uri = \Yii::$app->request->hostInfo.\Yii::$app->urlManager->getBaseUrl().'/'.'platform/lazada-accounts/auth2';
+             $ApiAuth = new LazadaInterface_Helper_V2();
+             $url = $ApiAuth->getAuthUrl($state,$redirect_uri);
             
-            $url = "https://auth.littleboss.com/platform/lazada-accounts/open-auth1";
+            //$url = "https://auth.littleboss.com/platform/lazada-accounts/open-auth1";
             if(!empty($_GET['lzd_uid'])){
                 $slu = SaasLazadaUser::findOne($_GET['lzd_uid']);
                 $url .= "?account=".$slu->platform_userid."_".$slu->lazada_site;

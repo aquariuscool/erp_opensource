@@ -354,7 +354,7 @@ class PlatformController extends \eagle\components\Controller{
     			if (empty($nextTimeList[$currentPlaform])) $nextTimeList[$currentPlaform] = 0.5;
     			$user['next_time'] = date('Y-m-d H:i:s',$tmp['result']['last_time']+60*60*$nextTimeList[$currentPlaform]);
     		}else{
-    			$user['next_time'] = date('Y-m-d H:i:s',$user['create_time']+60*60*$nextTimeList[$currentPlaform]);
+    			$user['next_time'] = date('Y-m-d H:i:s',strtotime($user['create_time'])+60*60*$nextTimeList[$currentPlaform]);
     		}
     	}
     	

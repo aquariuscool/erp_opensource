@@ -2,3 +2,6 @@ eagle/runtime/*
 console/runtime/*
 temp
 *CdiscountOfferTerminatorHelper.php
+/vendor
+.DS_Store
+/.idea

@@ -19,7 +19,7 @@ class PublicAsset extends AssetBundle
     // public $sourcePath = '@web/js';
     public $js = [
         'js/jquery/jquery.tmpl.min.js',
-        'js/public.js?v=1507878023',
+        'js/public.js?v=1507878025',
     ];
     public $depends = [
     	'yii\web\JqueryAsset'

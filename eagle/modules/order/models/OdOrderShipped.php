@@ -3,7 +3,7 @@
 namespace eagle\modules\order\models;
 
 use Yii;
-use yii\behaviors\SerializeBehavior;
+use eagle\behaviors\SerializeBehavior;
 /**
  * This is the model class for table "sys_carrier_account".
  *

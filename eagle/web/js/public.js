@@ -1453,7 +1453,7 @@ if(!Array.prototype.forEach){
 
 	// 加载插件
 	$.fn.registerPlugin = function(name, Fn, global) {
-		if($(this).size()){
+		if($(this).length){
 			var self = this;
 			$.require(_pluginDeps[name], function(v) {
 				$(self).each(function() {
@@ -2671,7 +2671,7 @@ if(!Array.prototype.forEach){
 			var status = $.ivStatus('topNavStatus') || {};
 			$nav.find('li').each(function() {
 				var $li = $(this);
-				if ($li.find('.cert').size()) { // 对含有下拉菜单的进行检索
+				if ($li.find('.cert').length) { // 对含有下拉菜单的进行检索
 					var data = [],
 						pLabel = $li.find('a').nodeText();
 					$li.find('ul li').each(function() {

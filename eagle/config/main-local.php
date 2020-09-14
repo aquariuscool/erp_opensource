@@ -7,6 +7,29 @@ $config = [
             'cookieValidationKey' => 'tubpAoGkzCrcy9yXasqqN1NjnjKRpPil',
         ],
       
+
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=managedb',
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+        ],
+        'db_queue' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=managedb_queue',
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+        ],
+        'db_queue2' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=managedb_queue',
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+        ],
+
     ],
 ];
 
