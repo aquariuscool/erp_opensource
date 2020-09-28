@@ -3,6 +3,7 @@
 namespace eagle\modules\order\controllers;
 
 use eagle\modules\listing\models\OdOrderItem2;
+use Spipu\Html2Pdf\Html2Pdf;
 use yii\data\Pagination;
 use eagle\modules\order\models\OdOrder;
 use eagle\modules\order\models\Excelmodel;
@@ -1369,7 +1370,8 @@ class OrderController extends \eagle\components\Controller{
 		}
 		
 		
-		$mpdf=new \HTML2PDF('P','A4','en');
+		$mpdf=new Html2Pdf('P','A4','en');
+		$mpdf->setTestTdInOnePage(false);
 		
 		if(is_string($order_id)){
 			$order_id = str_replace(';', ',', $order_id);
@@ -1383,7 +1385,7 @@ class OrderController extends \eagle\components\Controller{
 				$toCountry = SysCountry::findOne(strtoupper($orderModel->consignee_country_code));
 				//东南亚字体支持
 				if(!empty($toCountry->region) && in_array($toCountry->region, ['Asia','Southeast Asia']))
-					$mpdf->setDefaultFont('droidsansfallback');
+					$mpdf->setDefaultFont('Helvetica');
 				//泰文，老挝文支持
 				if(in_array($orderModel->consignee_country_code,['TH','LA'])){
 					$mpdf->setDefaultFont('angsau');
@@ -1412,7 +1414,7 @@ class OrderController extends \eagle\components\Controller{
 	 **/
 	public function actionOrderlistInvoice($orderids,$type='G')
 	{
-		$mpdf=new \HTML2PDF('P','A4','en');
+		$mpdf=new Html2Pdf('P','A4','en');
 		$orderidlist = explode(',',$orderids);
 		Helper_Array::removeEmpty($orderidlist);
 		if (count($orderids)>0)
@@ -1425,7 +1427,7 @@ class OrderController extends \eagle\components\Controller{
 				if(!empty($orderModel->consignee_country_code)){
 					$toCountry = SysCountry::findOne(strtoupper($orderModel->consignee_country_code));
 					if(!empty($toCountry->region) && in_array($toCountry->region, ['Asia','Southeast Asia']))
-						$mpdf->setDefaultFont('droidsansfallback');
+						$mpdf->setDefaultFont('Helvetica');
 				}
 				$text = OrderHelper::pdf_order_invoice($order_id, $type);
 				$mpdf->WriteHTML($text);

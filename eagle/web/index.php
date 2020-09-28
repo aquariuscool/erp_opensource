@@ -22,8 +22,8 @@ $config = yii\helpers\ArrayHelper::merge(
 $vendorDir = dirname(dirname(__DIR__)) . '/vendor'; 
 
 $application = new yii\web\Application($config);
-Yii::$classMap['HTML2PDF'] = $vendorDir . '/html2pdf/html2pdf.class.php'; // 在启动yii的之前加上这个类
-Yii::$classMap['TCPDF'] = $vendorDir . '/tcpdf/tcpdf.php'; // 在启动yii的之前加上这个类
+//Yii::$classMap['HTML2PDF'] = $vendorDir . '/html2pdf/html2pdf.class.php'; // 在启动yii的之前加上这个类
+//Yii::$classMap['TCPDF'] = $vendorDir . '/tcpdf/tcpdf.php'; // 在启动yii的之前加上这个类
 //beforeRequestHandle
 //\Yii::$app->on(\yii\base\Application::EVENT_BEFORE_REQUEST,eagle\helpers\EventHandlerHelper::beforeRequestHandle());
 //\Yii::$app->on(\yii\base\Application::EVENT_BEFORE_ACTION,eagle\helpers\EventHandlerHelper::beforeActionHandle());

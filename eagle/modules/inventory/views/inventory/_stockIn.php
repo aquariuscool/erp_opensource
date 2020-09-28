@@ -3,15 +3,16 @@ use yii\helpers\Html;
 use eagle\modules\util\helpers\TranslateHelper;
 use yii\helpers\Url;
 use eagle\modules\inventory\helpers\InventoryHelper;
+use eagle\assets\JuiAsset;
 
 $baseUrl = \Yii::$app->urlManager->baseUrl;
 $this->registerJsFile($baseUrl."/js/project/inventory/stockchange.js?v=1.1", ['depends' => ['yii\web\JqueryAsset']]);
-$this->registerJsFile($baseUrl."/js/project/catalog/selectProduct.js?v=1.2", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."/js/project/catalog/selectProduct.js?v=1.2", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
-$this->registerJsFile($baseUrl."/js/ajaxfileupload.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile($baseUrl."/js/project/inventory/import_file.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile($baseUrl."/js/project/inventory/text_import.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile($baseUrl."/js/jquery.watermark.min.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."/js/ajaxfileupload.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."/js/project/inventory/import_file.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."/js/project/inventory/text_import.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."/js/jquery.watermark.min.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 $this->registerCssFile($baseUrl."/css/inventory/inventory.css");
 $this->registerJs("inventory.stockIn.init();" , \yii\web\View::POS_READY);
 

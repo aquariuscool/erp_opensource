@@ -4,12 +4,12 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\jui\Dialog;
 use yii\data\Sort;
-use yii\jui\JuiAsset;
 use eagle\modules\purchase\helpers\PurchaseHelper;
+use eagle\assets\JuiAsset;
 
 $baseUrl = \Yii::$app->urlManager->baseUrl;
 $this->registerJsFile($baseUrl."/js/project/purchase/purchase/purchaseOrderList.js?v=1.2", ['depends' => ['yii\web\JqueryAsset']]);
-$this->registerJsFile($baseUrl."js/project/purchase/purchase/downloadexcel.js?v=1.0", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/purchase/purchase/downloadexcel.js?v=1.0", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 $this->registerJsFile($baseUrl."/js/project/purchase/purchase_link_list.js", ['depends' => ['yii\web\JqueryAsset']]);
 $this->registerJsFile($baseUrl."/js/project/purchase/purchase/purchase1688Create.js?v=1.3", ['depends' => ['yii\web\JqueryAsset']]);
 

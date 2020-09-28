@@ -7,9 +7,10 @@ use eagle\modules\order\models\OdOrder;
 use Qiniu\json_decode;
 use eagle\modules\platform\apihelpers\PlatformAccountApi;
 use eagle\modules\carrier\helpers\CarrierOpenHelper;
+use eagle\assets\JuiAsset;
 
 $baseUrl = \Yii::$app->urlManager->baseUrl . '/';
-$this->registerJsFile($baseUrl."js/project/configuration/config.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/configuration/config.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 ?>
 <style>
 	.leftDIV{

@@ -35,7 +35,7 @@ use eagle\modules\order\models\OdOrder;
  * @version		1.0
  +------------------------------------------------------------------------------
 */
-class PurchaseSugController extends \eagle\components\Controller{
+class PurchasesugController extends \eagle\components\Controller{
 	
 	/**
 	 * @return array action filters

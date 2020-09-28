@@ -2,27 +2,28 @@
 use eagle\modules\util\helpers\TranslateHelper;
 use yii\bootstrap\Dropdown;
 use eagle\helpers\HtmlHelper;
+use eagle\assets\JuiAsset;
 $baseUrl = \Yii::$app->urlManager->baseUrl . '/';
 $tmp_js_version = '2.13';
 $this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/carrier.js?v=".$tmp_js_version);
 $this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/shipping.js?v=".$tmp_js_version);
-$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/index.js?v=".$tmp_js_version, ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/index.js?v=".$tmp_js_version, ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 $this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/address.js?v=".$tmp_js_version);
 $this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/shippingRules.js?v=".$tmp_js_version);
 
-$this->registerJsFile(\Yii::getAlias('@web')."/js/project/configuration/warehouseconfig/overseawarehouselist.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile(\Yii::getAlias('@web')."/js/project/configuration/warehouseconfig/overseawarehouselist.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
 $this->registerJsFile(\Yii::getAlias('@web')."/js/ajaxfileupload.js", ['depends' => ['yii\web\JqueryAsset']]);
-$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/trackwarehouse/trackwarehouse.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/trackwarehouse/insertTrack.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/trackwarehouse/import_file.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/trackwarehouse/trackwarehouse.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/trackwarehouse/insertTrack.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/trackwarehouse/import_file.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
-$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/custom/custom.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/custom/custom.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 $this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/custom/excelFormat.js");
-$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/custom/import_file.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/custom/import_file.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
-$this->registerJsFile(\Yii::getAlias('@web')."/js/project/configuration/carrierconfig/custom/import_file.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile(\Yii::getAlias('@web')."/js/project/configuration/carrierconfig/custom/excelFormat.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile(\Yii::getAlias('@web')."/js/project/configuration/carrierconfig/custom/import_file.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile(\Yii::getAlias('@web')."/js/project/configuration/carrierconfig/custom/excelFormat.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
 $this->registerJsFile(\Yii::getAlias('@web')."/js/project/carrier/customprint/bootstrap.min.js");
 
@@ -36,8 +37,8 @@ if(!empty($open_carriers)){
 
 $isset = false;
 
-$this->registerJsFile($baseUrl."js/project/util/select_country.js?v=".$tmp_js_version, ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile(\Yii::getAlias('@web')."/js/project/catalog/selectProduct.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/util/select_country.js?v=".$tmp_js_version, ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile(\Yii::getAlias('@web')."/js/project/catalog/selectProduct.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 ?>
 <style>
 .alert {

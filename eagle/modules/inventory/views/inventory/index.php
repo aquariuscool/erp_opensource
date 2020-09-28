@@ -6,17 +6,18 @@ use eagle\modules\util\helpers\TranslateHelper;
 use yii\helpers\Url;
 use yii\jui\Dialog;
 use yii\data\Sort;
+use eagle\assets\JuiAsset;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $baseUrl = \Yii::$app->urlManager->baseUrl . '/';
-//$this->registerJsFile($baseUrl."js/project/tracking/manual_import.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile($baseUrl."js/project/inventory/inventory_list.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile($baseUrl."js/project/inventory/downloadexcel.js?v=1.0", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile($baseUrl."js/jquery.json-2.4.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+//$this->registerJsFile($baseUrl."js/project/tracking/manual_import.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/inventory/inventory_list.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/inventory/downloadexcel.js?v=1.0", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/jquery.json-2.4.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 $this->registerCssFile($baseUrl."css/inventory/inventory.css");
-//$this->registerJsFile($baseUrl."js/project/tracking/ajaxfileupload.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+//$this->registerJsFile($baseUrl."js/project/tracking/ajaxfileupload.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
 //$this->title = TranslateHelper::t('仓储管理');
 //$this->params['breadcrumbs'][] = $this->title;

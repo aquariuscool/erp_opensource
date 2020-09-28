@@ -4,15 +4,15 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\jui\Dialog;
 use yii\data\Sort;
-use yii\jui\JuiAsset;
 use eagle\modules\purchase\helpers\PurchaseHelper;
+use eagle\assets\JuiAsset;
 
 $tmp_js_version = '1.01';
 $baseUrl = \Yii::$app->urlManager->baseUrl;
 
 $this->registerJsFile ( $baseUrl . "/js/jquery.json-2.4.js", [
 		'depends' => [
-		'yii\jui\JuiAsset',
+		JuiAsset::class,
 		'yii\bootstrap\BootstrapPluginAsset'
 	]
 ] );
@@ -21,7 +21,7 @@ $this->registerCssFile ( $baseUrl . "/css/statistics/statistics.css" );
 $this->registerJsFile($baseUrl."/js/project/statistics/statisticsList.js?v=".$tmp_js_version, ['depends' => ['yii\web\JqueryAsset']]);
 $this->registerJsFile($baseUrl."/js/project/statistics/salesList.js?v=".$tmp_js_version, ['depends' => ['yii\web\JqueryAsset']]);
 $this->registerJsFile($baseUrl."js/project/catalog/downloadexcel.js", ['depends' => ['yii\web\JqueryAsset']]);
-$this->registerJsFile($baseUrl."js/project/util/select_country.js?v=".$tmp_js_version, ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/util/select_country.js?v=".$tmp_js_version, ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
 $this->registerJs("statistics.list.init();" , \yii\web\View::POS_READY);
 $this->registerJs("sales.list.init();" , \yii\web\View::POS_READY);

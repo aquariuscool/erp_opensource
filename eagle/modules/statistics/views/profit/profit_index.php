@@ -4,8 +4,8 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\jui\Dialog;
 use yii\data\Sort;
-use yii\jui\JuiAsset;
 use eagle\modules\purchase\helpers\PurchaseHelper;
+use eagle\assets\JuiAsset;
 
 $tmp_js_version = '1.07';
 $baseUrl = \Yii::$app->urlManager->baseUrl;
@@ -14,7 +14,7 @@ $this->registerJsFile($baseUrl."/js/project/statistics/statisticsList.js?v=".$tm
 $this->registerJsFile($baseUrl."/js/project/statistics/profit/profitList.js?v=".$tmp_js_version, ['depends' => ['yii\web\JqueryAsset']]);
 $this->registerJsFile(\Yii::getAlias('@web')."/js/project/statistics/profit/import_file.js", ['depends' => ['yii\web\JqueryAsset']]);
 $this->registerJsFile(\Yii::getAlias('@web')."/js/origin_ajaxfileupload.js", ['depends' => ['yii\web\JqueryAsset']]);
-$this->registerJsFile($baseUrl."js/project/util/select_country.js?v=".$tmp_js_version, ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/util/select_country.js?v=".$tmp_js_version, ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
 $this->registerJs("statistics.list.init();" , \yii\web\View::POS_READY);
 $this->registerJs("profit.list.init();" , \yii\web\View::POS_READY);

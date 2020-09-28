@@ -13,6 +13,7 @@ use eagle\modules\order\helpers\OrderHelper;
 use eagle\modules\inventory\helpers\InventoryApiHelper;
 use eagle\modules\order\helpers\OrderFrontHelper;
 use eagle\modules\order\helpers\CdiscountOrderHelper;
+use eagle\assets\JuiAsset;
 $baseUrl = \Yii::$app->urlManager->baseUrl . '/';
 $tmp_js_version = '1.6';
 
@@ -34,12 +35,12 @@ $this->registerJsFile(\Yii::getAlias('@web')."/js/project/order/OrderTag.js", ['
 $this->registerJsFile(\Yii::getAlias('@web')."/js/project/order/orderOrderList.js", ['depends' => ['yii\web\JqueryAsset']]);
 $this->registerJs("OrderTag.TagClassList=".json_encode(OrderTagHelper::getTagColorMapping()).";" , \yii\web\View::POS_READY);
 //订单批量操作公用js文件
-$this->registerJsFile($baseUrl."js/project/order/orderActionPublic.js?v=".$tmp_js_version, ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/order/orderActionPublic.js?v=".$tmp_js_version, ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
 //扫描发货js文件
-$this->registerJsFile($baseUrl."js/project/delivery/order/showscanninglistdistributionbox.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile($baseUrl."js/project/delivery/order/showscanninglistdeliveryonebox.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile($baseUrl."js/project/delivery/order/showscanninglistdeliverychoosebox.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/delivery/order/showscanninglistdistributionbox.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/delivery/order/showscanninglistdeliveryonebox.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/delivery/order/showscanninglistdeliverychoosebox.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
 //引用ebay的图标
 $this->registerCssFile(\Yii::getAlias('@web').'/css/order/order.css');
@@ -59,7 +60,7 @@ $use_mode = isset($_REQUEST['use_mode']) ? $_REQUEST['use_mode'] : '';
 $this->registerJs("$('.prod_img').popover();" , \yii\web\View::POS_READY);
 
 $this->registerJsFile ( \Yii::getAlias ( '@web' ) . "/js/project/delivery/order/cainiao.js?v=".\eagle\modules\order\helpers\OrderListV3Helper::$OrderCommonJSV3, ['depends' => ['yii\web\JqueryAsset']]);
-$this->registerJsFile(\Yii::getAlias('@web').'js/jquery.json-2.4.js', ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile(\Yii::getAlias('@web').'js/jquery.json-2.4.js', ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 ?>
 <style>
 .modal-content{

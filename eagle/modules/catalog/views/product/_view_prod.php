@@ -3,9 +3,10 @@ use yii\helpers\Html;
 use eagle\modules\util\helpers\TranslateHelper;
 use yii\helpers\Url;
 use eagle\helpers\UserHelper;
+use eagle\assets\JuiAsset;
 
 $baseUrl = \Yii::$app->urlManager->baseUrl;
-$this->registerJsFile($baseUrl."/js/project/catalog/selectProduct.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."/js/project/catalog/selectProduct.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 $this->registerJs("$.initQtip();" , \yii\web\View::POS_READY);
 
 $proudctInfo['name'] = ((empty($model->name))?"":$model->name);

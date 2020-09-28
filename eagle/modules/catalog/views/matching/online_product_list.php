@@ -4,15 +4,15 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\jui\Dialog;
 use yii\data\Sort;
-use yii\jui\JuiAsset;
 use eagle\modules\util\models\TranslateCache;
 use eagle\helpers\UserHelper;
+use eagle\assets\JuiAsset;
 
 $baseUrl = \Yii::$app->urlManager->baseUrl . '/';
 
-$this->registerJsFile($baseUrl."js/project/catalog/online_product_list.js?version=1.1", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile($baseUrl."js/project/catalog/create_product.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile($baseUrl."js/project/order/orderCommon.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/catalog/online_product_list.js?version=1.1", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/catalog/create_product.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/order/orderCommon.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
 $this->registerJs("online_product.list.init();" , \yii\web\View::POS_READY);
 

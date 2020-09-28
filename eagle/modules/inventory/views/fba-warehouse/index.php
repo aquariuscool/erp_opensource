@@ -6,9 +6,10 @@ use eagle\modules\util\helpers\TranslateHelper;
 use yii\helpers\Url;
 use yii\jui\Dialog;
 use yii\data\Sort;
+use eagle\assets\JuiAsset;
 
 $baseUrl = \Yii::$app->urlManager->baseUrl . '/';
-$this->registerJsFile($baseUrl."js/jquery.json-2.4.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/jquery.json-2.4.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 $this->registerCssFile($baseUrl."css/inventory/inventory.css");
 
 //$this->title = TranslateHelper::t('仓储管理');

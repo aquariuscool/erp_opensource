@@ -3,9 +3,10 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 use eagle\modules\util\helpers\ExcelHelper;
+use eagle\assets\JuiAsset;
 
-$this->registerJsFile(\Yii::getAlias('@web').'js/jquery.json-2.4.js', ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-$this->registerJsFile(\Yii::getAlias('@web').'js/project/configuration/elseconfig/addexportshow.js?v=1.0', ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile(\Yii::getAlias('@web').'js/jquery.json-2.4.js', ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile(\Yii::getAlias('@web').'js/project/configuration/elseconfig/addexportshow.js?v=1.0', ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 ?>
 <style>
 a{

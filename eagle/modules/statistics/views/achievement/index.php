@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\jui\Dialog;
 use yii\data\Sort;
-use yii\jui\JuiAsset;
 use eagle\modules\purchase\helpers\PurchaseHelper;
+use eagle\assets\JuiAsset;
 
 $baseUrl = \Yii::$app->urlManager->baseUrl;
 
 $this->registerJsFile ( $baseUrl . "/js/jquery.json-2.4.js", [
 		'depends' => [
-		'yii\jui\JuiAsset',
+		JuiAsset::class,
 		'yii\bootstrap\BootstrapPluginAsset'
 	]
 ] );

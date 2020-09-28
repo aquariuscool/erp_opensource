@@ -4,15 +4,17 @@ use eagle\modules\util\helpers\TranslateHelper;
 use yii\bootstrap\Dropdown;
 use eagle\helpers\HtmlHelper;
 use yii\data\Sort;
+use eagle\assets\JuiAsset;
+
 $baseUrl = \Yii::$app->urlManager->baseUrl . '/';
 $tmp_js_version = '2.22';
 
 $this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/shippingRules.js?v=".$tmp_js_version);
-$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/rule/rule.js?v=".$tmp_js_version, ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/rule/rule.js?v=".$tmp_js_version, ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
-$this->registerJsFile($baseUrl."js/project/util/select_country.js?v=".$tmp_js_version, ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/util/select_country.js?v=".$tmp_js_version, ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
-$this->registerJsFile(\Yii::getAlias('@web')."/js/project/catalog/selectProduct.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile(\Yii::getAlias('@web')."/js/project/catalog/selectProduct.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 ?>
 <style>
 .main_top{

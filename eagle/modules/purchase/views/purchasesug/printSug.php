@@ -1,10 +1,11 @@
 
 <?php
 use eagle\modules\util\helpers\TranslateHelper;
+use eagle\assets\JuiAsset;
 
 $baseUrl = \Yii::$app->urlManager->baseUrl;
-$this->registerJsFile($baseUrl."/js/project/purchase/suggestion/printSug.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
-//$this->registerJsFile($baseUrl."js/jquery.json-2.4.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."/js/project/purchase/suggestion/printSug.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
+//$this->registerJsFile($baseUrl."js/jquery.json-2.4.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 
 $this->registerJs("printSug.page.init()", \yii\web\View::POS_READY);
 ?>

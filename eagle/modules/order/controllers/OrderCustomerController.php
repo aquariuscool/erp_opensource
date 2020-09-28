@@ -2,6 +2,7 @@
 
 namespace eagle\modules\order\controllers;
 
+use Spipu\Html2Pdf\Html2Pdf;
 use yii\data\Pagination;
 use eagle\modules\message\helpers\MessageHelper;
 use eagle\modules\order\models\OdOrder;
@@ -57,7 +58,7 @@ class OrderCustomerController extends Controller{
 		}
  
 	
-		$mpdf=new \HTML2PDF('P','A4','en');
+		$mpdf=new Html2Pdf('P','A4','en');
 		//亚洲字体处理
 		
 		$track = Tracking::findOne($track_id);
@@ -69,7 +70,7 @@ class OrderCustomerController extends Controller{
 		if(!empty($orderModel->consignee_country_code)){
 			$toCountry = SysCountry::findOne(strtoupper($orderModel->consignee_country_code));
 			if(!empty($toCountry->region) && in_array($toCountry->region, ['Asia','Southeast Asia']))
-				$mpdf->setDefaultFont('droidsansfallback');
+				$mpdf->setDefaultFont('Helvetica');
 		}
 		
 		$text = OrderHelper::pdf_order_invoice($orderModel->order_id,'',$uid);

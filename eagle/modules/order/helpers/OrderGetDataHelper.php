@@ -1353,8 +1353,8 @@ CLASS OrderGetDataHelper{
 	 	
 	 	
 	 	//只显示已绑定的账号的信息
-	 	$bind_stores = '';
-	 	$bind_order_souce = '';
+	 	$bind_stores = [];
+	 	$bind_order_souce = [];
 	 	$uid = \Yii::$app->subdb->getCurrentPuid();
 	 	$platformAccountInfo = PlatformAccountApi::getAllPlatformOrderSelleruseridLabelMap($uid);
 	 	//$platformAccountInfo = PlatformAccountApi::getAllAuthorizePlatformOrderSelleruseridLabelMap(false, false, true);//引入平台账号权限后

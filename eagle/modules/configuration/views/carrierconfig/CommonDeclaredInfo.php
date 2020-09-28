@@ -2,9 +2,10 @@
 use eagle\modules\util\helpers\TranslateHelper;
 use yii\bootstrap\Dropdown;
 use eagle\helpers\HtmlHelper;
+use eagle\assets\JuiAsset;
 
 $baseUrl = \Yii::$app->urlManager->baseUrl . '/';
-$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/index.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/configuration/carrierconfig/index.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 $this->registerCssFile($baseUrl."css/configuration/carrierconfig/switch.css");
 ?>
 <style>

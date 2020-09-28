@@ -4,9 +4,10 @@ use yii\bootstrap\Dropdown;
 use yii\grid\GridView;
 use eagle\helpers\HtmlHelper;
 use yii\helpers\Url;
+use eagle\assets\JuiAsset;
 
 $baseUrl = \Yii::$app->urlManager->baseUrl . '/';
-$this->registerJsFile($baseUrl . "js/project/configuration/carrierconfig/CarrierCustomLabel/CarrierCustomLabel.js?v=1.0",['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl . "js/project/configuration/carrierconfig/CarrierCustomLabel/CarrierCustomLabel.js?v=1.0",['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 ?>
 <style>
 	#template_name_notice {

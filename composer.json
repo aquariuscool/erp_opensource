@@ -15,10 +15,16 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.6.0",
+        "alexgx/yii2-phpexcel": "*",
+        "aliyuncs/oss-sdk-php": "~2.0",
         "endroid/qr-code": "^3.0@dev",
         "facebook/graph-sdk": "^6.0@dev",
+        "hguenot/yii2-gftp": "*",
+        "jurosh/pdf-merge": "^2.0",
         "paypal/rest-api-sdk-php": "*",
         "qiniu/php-sdk": "dev-master",
+        "setasign/fpdf": "1.8.*",
+        "setasign/fpdi": "^2.0",
         "spipu/html2pdf": "dev-master",
         "stripe/stripe-php": "^2.0@dev",
         "tecnickcom/tcpdf": "^6.3",
@@ -27,13 +33,7 @@
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-jui": "~2.0.0",
         "yiisoft/yii2-redis": "~2.0.0",
-        "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "alexgx/yii2-phpexcel": "*",
-        "aliyuncs/oss-sdk-php": "~2.0",
-        "hguenot/yii2-gftp": "*",
-        "setasign/fpdf": "1.8.*",
-        "setasign/fpdi": "^2.0",
-        "jurosh/pdf-merge": "^2.0"
+        "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

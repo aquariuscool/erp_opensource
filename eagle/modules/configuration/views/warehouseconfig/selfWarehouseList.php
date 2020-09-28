@@ -1,8 +1,9 @@
 <?php
 use yii\helpers\Html;
 use eagle\modules\util\helpers\TranslateHelper;
+use eagle\assets\JuiAsset;
 
-$this->registerJsFile(\Yii::getAlias('@web')."/js/project/configuration/warehouseconfig/selfwarehouselist.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile(\Yii::getAlias('@web')."/js/project/configuration/warehouseconfig/selfwarehouselist.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 $this->registerJs("selfwarehouselist.init();" , \yii\web\View::POS_READY);
 
 if(isset($warehouseOneInfo['addi_info']['address_nation'])){

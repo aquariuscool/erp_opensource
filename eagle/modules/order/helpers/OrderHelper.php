@@ -2841,7 +2841,7 @@ class OrderHelper {
 		$html_body = '<page orientation="p">';
 
 		$html_body.=
-		'<table STYLE="position:relative;page-break-after:always;">
+		'<table STYLE="position:relative;">
 			<col style="width: 49%">
 			<col style="width: 49%">
 				<tr>

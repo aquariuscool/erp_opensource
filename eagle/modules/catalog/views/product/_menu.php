@@ -4,10 +4,10 @@ use yii\helpers\Url;
 use eagle\modules\util\helpers\TranslateHelper;
 use eagle\modules\catalog\helpers\ProductHelper;
 use eagle\modules\permission\apihelpers\UserApiHelper;
-
+use eagle\assets\JuiAsset;
 
 $baseUrl = \Yii::$app->urlManager->baseUrl . '/';
-$this->registerJsFile($baseUrl."js/project/catalog/product-classification.js", ['depends' => ['yii\jui\JuiAsset','yii\bootstrap\BootstrapPluginAsset']]);
+$this->registerJsFile($baseUrl."js/project/catalog/product-classification.js", ['depends' => [JuiAsset::class,'yii\bootstrap\BootstrapPluginAsset']]);
 ?>
 <style>
 .left_menu{
