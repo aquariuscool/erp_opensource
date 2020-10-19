@@ -332,7 +332,7 @@ class UserHelper
 			$return1 = true;
 			$return2 = true;
 			if(!empty($post['password'])) {
-			    $post['password'] = md5($post['password']);
+			    $post['password'] = \Yii::$app->getSecurity()->generatePasswordHash($post['password']);
 			    $post['auth_key'] = \Yii::$app->getSecurity()->generateRandomString();
 			}
 			

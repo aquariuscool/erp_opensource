@@ -142,8 +142,8 @@ class UserController extends \eagle\components\Controller {
 			if(empty($_POST['formerpassword'])){
 				return ResultHelper::getResult(400, '', TranslateHelper::t('请输入原密码！'));
 			}
-				
-			if(md5($_POST['formerpassword']) != $user->password){
+
+            if (!\Yii::$app->user->identity->validatePassword($_POST['formerpassword'])) {
 				return ResultHelper::getResult(400, '', TranslateHelper::t('原密码错误！'));
 			}
 		}

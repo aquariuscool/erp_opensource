@@ -147,13 +147,13 @@ class SiteController extends \yii\web\Controller
 			//尝试登陆
 			$postData=Yii::$app->request->post();
 			$model->username = $postData["user_name"];
-			$model->password = md5($postData["password"]);
+			$model->password = $postData['password'];
 			if(!empty($postData["rememberMe"]))
 				$model->rememberMe = true;
 			else 
 			$model->rememberMe = false;
 			
-			\Yii::info('username,password:'.$model->username.",".$model->password,"file");
+			\Yii::info('username:'.$model->username,"file");
 
 			if ($model->login()){
 				
