@@ -45,11 +45,11 @@ class UserBase extends \yii\db\ActiveRecord
         return [
             [['auth_key', 'register_date', 'email'], 'required'],
             [['register_date', 'last_login_date', 'puid', 'is_active', 'user_app_type', 'user_level'], 'integer'],
-            [['user_name', 'nickname', 'password', 'last_login_source', 'email', 'register_from_source', 'sourcecode'], 'string', 'max' => 50],
+            [['user_name', 'nickname', 'last_login_source', 'email', 'register_from_source', 'sourcecode'], 'string', 'max' => 50],
             [['auth_key'], 'string', 'max' => 32],
             [['last_login_ip', 'register_ip'], 'string', 'max' => 20],
             [['ipcn'], 'string', 'max' => 80],
-            [['source_url'], 'string', 'max' => 255],
+            [['password', 'source_url'], 'string', 'max' => 255],
             [['email'], 'unique'],
             [['user_name'], 'unique']
         ];

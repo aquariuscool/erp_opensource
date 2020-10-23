@@ -12,6 +12,7 @@ class JuiAsset extends \yii\web\AssetBundle
         'jquery.ui.widget.js',
         'jquery.ui.position.js',
         'jquery.ui.mouse.js',
+        'jquery.ui.tabs.js',
         'jquery.ui.sortable.js',
         'jquery.ui.effect-all.js',
         'jquery.ui.datepicker.js',

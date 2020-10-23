@@ -339,7 +339,8 @@ class UserHelper
 			$user->setAttributes($post);
 			if(!$user->save()){
 				$return1 = false;
-				\Yii::error("Permission,".__CLASS__.",". __FUNCTION__.",权限管理错误日志：  ".json_decode($user->getErrors()) ,"file");
+				\Yii::error("Permission,".__CLASS__.",". __FUNCTION__.",权限管理错误日志：  ".json_encode($user->getErrors())
+                    ,"file");
 			}
 			
 			if(empty($user->info)){// 测试机账号信息不全bug fix
@@ -353,7 +354,7 @@ class UserHelper
 			$user->info->setAttributes($post);
 			if(!$user->info->save()){
 				$return2 = false;
-				\Yii::error("Permission,".__CLASS__.",". __FUNCTION__.",权限管理错误日志：  ".json_decode($user->info->getErrors()) ,"file");
+				\Yii::error("Permission,".__CLASS__.",". __FUNCTION__.",权限管理错误日志：  ".json_encode($user->info->getErrors()) ,"file");
 			}
 			 
 			// 保存权限信息
