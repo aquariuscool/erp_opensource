@@ -132,9 +132,7 @@ $this->title = TranslateHelper::t('欢迎登录小老板平台');
 				<a href="<?= \Yii::getAlias ( '@web' )."/"?>site/request-password-reset" class="">忘记密码</a>
 			</div>
 
-            <?= $form->field($model, 'reCaptcha')->widget(\himiklab\yii2\recaptcha\ReCaptcha3::class, [
-                    'action' => 'login',
-            ])->label(false) ?>
+            <?= $form->field($model, 'reCaptcha')->widget(\himiklab\yii2\recaptcha\ReCaptcha2::class)->label(false) ?>
 
 			<div class="checkbox form-group">
 				<label style="cursor: auto;"></label>
