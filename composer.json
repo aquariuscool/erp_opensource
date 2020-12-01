@@ -21,6 +21,7 @@
         "facebook/graph-sdk": "^6.0@dev",
         "hguenot/yii2-gftp": "*",
         "jurosh/pdf-merge": "^2.0",
+        "himiklab/yii2-recaptcha-widget" : "*",
         "paypal/rest-api-sdk-php": "*",
         "qiniu/php-sdk": "dev-master",
         "setasign/fpdf": "1.8.*",

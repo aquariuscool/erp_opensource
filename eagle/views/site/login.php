@@ -1,4 +1,5 @@
 <?php
+use yii\widgets\ActiveForm;
 use eagle\modules\util\helpers\TranslateHelper;
 
 if( isset(\Yii::$app->params["isOnlyForOneApp"]) and \Yii::$app->params["isOnlyForOneApp"]==1 ){
@@ -111,8 +112,15 @@ $this->title = TranslateHelper::t('欢迎登录小老板平台');
 			title="小老板平台交流论坛"></a>
 	</div>
 	<div class="login_form" onkeydown="if(event.keyCode==13){site.loginPage.login();}">
-		<form id="loginForm" action="<?php echo  \Yii::getAlias ( '@web' )."/"?>site/login" class="form-inline" method="post">
-			<input type="hidden" name="_csrf" value="<?= \Yii::$app->request->getCsrfToken() ?>" />
+        <?php $form = ActiveForm::begin([
+            'enableClientValidation' => false,
+            'action' => \Yii::getAlias ( '@web' )."/site/login",
+            'options' => [
+                    'class' => 'form-inline',
+                'id' => 'loginForm',
+            ],
+        ]);
+        ?>
 			<div class="form-group">
 				<label for="user_name">账号(用户注册邮箱)：</label>
 				<input type="text" name="user_name" id="user_name" class="form-control" />
@@ -124,6 +132,10 @@ $this->title = TranslateHelper::t('欢迎登录小老板平台');
 				<a href="<?= \Yii::getAlias ( '@web' )."/"?>site/request-password-reset" class="">忘记密码</a>
 			</div>
 
+            <?= $form->field($model, 'reCaptcha')->widget(\himiklab\yii2\recaptcha\ReCaptcha3::class, [
+                    'action' => 'login',
+            ])->label(false) ?>
+
 			<div class="checkbox form-group">
 				<label style="cursor: auto;"></label>
 				<label><input type="checkbox" name="rememberMe">两周内自动登录</label>
@@ -132,7 +144,7 @@ $this->title = TranslateHelper::t('欢迎登录小老板平台');
 				<label></label>
 				<button class="btn btn-primary" type="button" onclick="site.loginPage.login();">提交</button>
 			</div>
-		</form>
+        <?php ActiveForm::end(); ?>
 	</div>
 </div>
 <!-- /#login_panel -->

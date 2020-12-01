@@ -31,7 +31,7 @@ site.loginPage = {
 		site.loginPage.hideTip($('#loginForm #user_name, #loginForm #password'));
 		var rememberme = $('input[name=rememberme_alert]').attr('checked') == 'checked' ? 1 : 0;
 		$.showLoading();
-		$.getJSON(
+		$.post(
 			global.baseUrl+'site/verify-user',
 			{user_name: $(_userNameInput).val(), password: $(_passwordInput).val()},
 			function(data){
@@ -48,7 +48,7 @@ site.loginPage = {
 				}
 				site.loginPage.showTip($(obj) , data.message);
 			}
-		);
+		, 'json');
 		
 		event.preventDefault();
 	},

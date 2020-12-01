@@ -146,6 +146,7 @@ class SiteController extends \yii\web\Controller
 		}else{
 			//尝试登陆
 			$postData=Yii::$app->request->post();
+			$model->load($postData);
 			$model->username = $postData["user_name"];
 			$model->password = $postData['password'];
 			if(!empty($postData["rememberMe"]))

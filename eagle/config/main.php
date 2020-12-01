@@ -126,6 +126,15 @@ return [
             'port' => 6379,
             'database' => 0
         ],
+        'reCaptcha' => [
+            'class' => 'himiklab\yii2\recaptcha\ReCaptchaConfig',
+            'siteKeyV2' => 'your siteKey v2',
+            'secretV2' => 'your secret key v2',
+            'siteKeyV3' => 'your siteKey v3',
+            'secretV3' => 'your secret key v3',
+            'jsApiUrl' => \himiklab\yii2\recaptcha\ReCaptchaConfig::JS_API_URL_ALTERNATIVE,
+            'siteVerifyUrl' => \himiklab\yii2\recaptcha\ReCaptchaConfig::SITE_VERIFY_URL_ALTERNATIVE,
+        ],
     ],
     'as ApplicationBehavior' => ['class' => 'eagle\components\ApplicationBehavior'],
     'params' => $params,
