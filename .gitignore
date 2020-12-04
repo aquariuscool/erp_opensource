@@ -5,3 +5,5 @@ temp
 /vendor
 .DS_Store
 /.idea
+params-local.php
+main-local.php
